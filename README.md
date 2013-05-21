@@ -8,11 +8,11 @@ If you are so awesome, create new modules in similar notion or improve, fix exis
 
 ## foundation
 A lot of core modules still have to be written. As seen in iOS, these serve an important role, so they neeed to be created soon. Here is a couple:
-- __[sioux-ui](https://github.com/gerhardberger/sioux-ui)__ is already written, but needs some more work (especially more css)
-- __segues:__ probably the next one i will start figuring out how to implement
-- __navigation__
-- __tables__
-- other key elements of a user interface ([switches](https://github.com/gerhardberger/sioux-ui-switch), [buttons](https://github.com/gerhardberger/sioux-ui-button), sliders etc)
+- __[sioux-ui](https://github.com/gerhardberger/sioux-ui)__
+- __[sioux-ui-segue](https://github.com/gerhardberger/sioux-ui-segue):__ `push` and `modal`
+- __[sioux-ui-navigation](https://github.com/gerhardberger/sioux-ui-navigation)__
+- __list__
+- other key elements of a UI ([switches](https://github.com/gerhardberger/sioux-ui-switch), [buttons](https://github.com/gerhardberger/sioux-ui-button), sliders etc)
 
 ## tips, helps
 I have not build a lot of modules for sioux myself, so my flow of creating a module may change over time, as is now here are a couple of things i used:
@@ -60,4 +60,10 @@ in server.js
 var b = browserify('./main.js');
 b.transform('brfs');		
 b.bundle().pipe(res);
+```
+
+### add html
+I started to use [brfs](https://github.com/substack/brfs) to insert the module's HTML too. This makes it more like a web component (which will be awesome).
+``` js
+var html = fs.readFileSync(__dirname + '/struct.html');
 ```
